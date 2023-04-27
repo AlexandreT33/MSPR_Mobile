@@ -36,4 +36,4 @@ export default function QR_Scanner() {
       {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
     </View>
   );
-}s
+}

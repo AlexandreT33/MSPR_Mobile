@@ -26,6 +26,14 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "plugins": [
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
+        }
+      ]
+    ],
     "extra": {
       "eas": {
         "projectId": "546ffb6d-e173-4f68-834f-82650e8cddc3"
