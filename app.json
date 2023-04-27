@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "mspr-mobile",
-    "slug": "mspr-mobile",
+    "slug": "msrp-mobile-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "546ffb6d-e173-4f68-834f-82650e8cddc3"
+      }
+    },
+    "owner": "alexandre33"
   }
 }
