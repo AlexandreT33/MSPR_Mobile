@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
 import QR_Scanner from './src/tools/qr_scanner'
+import AR from './src/tools/AR'
 
 export default function App() {
     const [showQrScanner, setshowQrScanner] = useState(false);
@@ -18,7 +19,7 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            {showQrScanner === true ? <QR_Scanner/> : <Text></Text>}
+            {showQrScanner === true ? <AR/> : <Text></Text>}
             <Button
                 title={returnButtonTitle()}
                 color="#f194ff"
