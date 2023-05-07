@@ -4,6 +4,15 @@ import QR_Scanner from './src/tools/qr_scanner'
 
 export default function App() {
     const [showQrScanner, setshowQrScanner] = useState(false);
+    const [apiKey, setApiKey] = useState(null);
+
+    useEffect(() => {
+        if (apiKey != null) {
+            console.log("Api key : " + apiKey);
+            setshowQrScanner(false);
+            alert(`l'api key ${apiKey} est bien remonté`);
+        }
+      }, [apiKey]);
 
     function returnButtonTitle(){
         let buttonTitle = "Ouvrir le scanner"
@@ -18,7 +27,7 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            {showQrScanner === true ? <QR_Scanner/> : <Text></Text>}
+            {showQrScanner === true ? <QR_Scanner setApiKey={setApiKey}/> : <Text></Text>}
             <Button
                 title={returnButtonTitle()}
                 color="#f194ff"
