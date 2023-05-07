@@ -59,7 +59,34 @@ const Authentification = () => {
             : null }
             {isConnexion === true ? 
                 <View style={styles}>
-                    <Text>Connexion</Text>
+                    <Button
+                        style={styles.back_button}
+                        title="Retour"
+                        onPress={() => {setPicked(false); setIsConnexion(false); setIsInscription(false)}}
+                    />
+                    <Text style={styles.text}>Connexion</Text>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={setEmail}
+                        value={email}
+                        keyboardType="email-address"
+                        placeholder="Adresse email"
+                        placeholderTextColor="#000000"
+                    />
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={setPassword}
+                        value={password}
+                        keyboardType="default"
+                        secureTextEntry={true}
+                        placeholder="Mot de passe"
+                        placeholderTextColor="#000000"
+                    />
+                    <Button
+                        title="Valider"
+                        color="#f194ff"
+                        onPress={() => {}}
+                    />
                 </View>
             : null }
 
