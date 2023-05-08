@@ -1,0 +1,19 @@
+name: EAS build
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Install EAS CLI
+      run: npm install -g @expo/eas-cli
+      
+    - name: Build project
+      run: eas build -p [all]
