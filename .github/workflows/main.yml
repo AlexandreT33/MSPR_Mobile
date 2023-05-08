@@ -15,8 +15,5 @@ jobs:
           eas-version: latest
           token: ${{ secrets.cicdgithub }}
 
-      - name: Install dependencies
-        run: yarn install
-
       - name: Publish update
         run: eas build -p all
