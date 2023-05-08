@@ -13,7 +13,7 @@ jobs:
         uses: expo/expo-github-action@v8
         with:
           eas-version: latest
-          token: ${{ secrets.cicdgithub }}
+          token: ${{ secrets.EXPO_TOKEN }}
 
       - name: Publish update
         run: eas build -p all
