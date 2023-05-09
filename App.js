@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 import QR_Scanner from './src/tools/qr_scanner'
+import Authentification from './src/authentification';
 
 export default function App() {
     const [showQrScanner, setshowQrScanner] = useState(false);
     const [apiKey, setApiKey] = useState(null);
+    const [page, setPage] = useState(0);
 
     useEffect(() => {
         if (apiKey != null) {
@@ -12,27 +16,13 @@ export default function App() {
             setshowQrScanner(false);
             alert(`l'api key ${apiKey} est bien remonté`);
         }
-      }, [apiKey]);
-
-    function returnButtonTitle(){
-        let buttonTitle = "Ouvrir le scanner"
-
-        if (showQrScanner === true) 
-        {
-            buttonTitle = "Fermer le scanner"
-        }
-
-        return buttonTitle
-    }
+    }, [apiKey]);
 
     return (
         <View style={styles.container}>
-            {showQrScanner === true ? <QR_Scanner setApiKey={setApiKey}/> : <Text></Text>}
-            <Button
-                title={returnButtonTitle()}
-                color="#f194ff"
-                onPress={() => {setshowQrScanner(!showQrScanner)}}
-            />
+            {page === 0 ? <Authentification setPage={setPage} /> : null}
+
+            
         </View>
     );
 }
@@ -46,3 +36,12 @@ const styles = StyleSheet.create({
         zIndex: 10,
     },
 });
+/*
+{showQrScanner === true ? <QR_Scanner setApiKey={setApiKey}/> : <Text></Text>}
+
+<Button
+title="QrScanner"
+color="#f194ff"
+onPress={() => {setshowQrScanner(!showQrScanner)}}
+/>
+*/
