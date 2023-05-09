@@ -2,7 +2,6 @@ node_modules/
 .expo/
 dist/
 .vs/*
-app.json
 package-lock.json
 coverage/**/*
 ./
