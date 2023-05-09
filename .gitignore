@@ -4,6 +4,7 @@ dist/
 .vs/*
 app.json
 package-lock.json
+coverage/**/*
 ./
 npm-debug.*
 *.jks
